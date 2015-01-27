@@ -1,0 +1,16 @@
+﻿Build started 27.01.2015 18:22:14.
+     1>Project "C:\Users\vebjorn\Documents\Visual Studio 2013\Projects\Heroes of Text V.0.2\Heros of Text\Heros of Text.vcxproj" on node 2 (Build target(s)).
+     1>ClCompile:
+         F:\programfiler\Visual Studio 2013\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /sdl /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc120.pdb" /Gd /TP /analyze- /errorReport:prompt Source.cpp
+         Source.cpp
+     1>Source.cpp(190): warning C4244: 'argument' : conversion from 'time_t' to 'unsigned int', possible loss of data
+       Link:
+         F:\programfiler\Visual Studio 2013\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\vebjorn\Documents\Visual Studio 2013\Projects\Heroes of Text V.0.2\Release\Heros of Text.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\vebjorn\Documents\Visual Studio 2013\Projects\Heroes of Text V.0.2\Release\Heros of Text.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\vebjorn\Documents\Visual Studio 2013\Projects\Heroes of Text V.0.2\Release\Heros of Text.lib" /MACHINE:X86 /SAFESEH Release\Source.obj
+         Generating code
+         Finished generating code
+         Heros of Text.vcxproj -> C:\Users\vebjorn\Documents\Visual Studio 2013\Projects\Heroes of Text V.0.2\Release\Heros of Text.exe
+     1>Done Building Project "C:\Users\vebjorn\Documents\Visual Studio 2013\Projects\Heroes of Text V.0.2\Heros of Text\Heros of Text.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:01.50
