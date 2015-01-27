@@ -7,6 +7,57 @@
 
 using namespace std;
 
+
+string skillName[4][4];
+int skillDamage[4][4];
+float skillHitChance[4][4];
+string skillDisplayHitChance[4][4];
+
+//Name
+void setSkillName(int clas, int skill, string name) {
+	skillName[clas - 1][skill - 1] = name;
+}
+
+string getSkillName(int clas, int skill){
+	return skillName[clas - 1][skill - 1];
+};
+
+//Damage
+void setSkillDamage(int clas, int skill, int damage) {
+	skillName[clas - 1][skill - 1] = damage;
+}
+
+int getSkillDamage(int clas, int skill){
+	return skillDamage[clas - 1][skill - 1];
+};
+
+//HitChance
+void setSkillHitChance(int clas, int skill, float hitChance) {
+	skillName[clas - 1][skill - 1] = hitChance;
+}
+
+float getSkillHitChance(int clas, int skill){
+	return skillHitChance[clas - 1][skill - 1];
+};
+
+
+//DisplayHitChance
+void setSkillDisplayHitChance(int clas, int skill, string displayHitChance) {
+	skillName[clas - 1][skill - 1] = displayHitChance;
+}
+
+string getSkillDisplayHitChance(int clas, int skill){
+	return skillDisplayHitChance[clas - 1][skill - 1];
+};
+
+
+void addInfoSkill(int clas, int skill, string name, int damage, float hitChance, string displayHitChance){
+	setSkillName(clas, skill, name);
+	setSkillDamage(clas, skill, damage);
+	setSkillHitChance(clas, skill, hitChance);
+	setSkillDisplayHitChance(clas, skill, displayHitChance);
+}
+
 int main() {
 
 	//Console Window Size
@@ -25,20 +76,14 @@ int main() {
 	float warriorHealth = 200;
 	//AbilitiesWarrior
 	//Cleaving Strike
-	string warriorSkill1Name = "Cleaving Strike";
-	int warriorSkill1Damage = 40;
-	float warriorSkill1HitChance = 3.0f;
-	string warriorSkill1DisplayHitChance = "30%";
+	addInfoSkill(1, 1, "Cleaving Strike", 40, 3.0f, "30%");
+	
 	//Slash
-	string warriorSkill2Name = "Slash";
-	int warriorSkill2Damage = 50;
-	float warriorSkill2HitChance = 2.0f;
-	string warriorSkill2DisplayHitChance = "20%";
+	addInfoSkill(1, 2, "Slash", 50, 2.0f, "20%");
+
 	//Spin to Win
-	string warriorSkill3Name = "Spin to win!";
-	int warriorSkill3Damage = 300;
-	float warriorSkill3HitChance = 1.0f;
-	string warriorSkill3DisplayHitChance = "10%";
+	addInfoSkill(1, 3, "Spin to win!", 300, 1.0f, "10%");
+	
 	//Rest (Heal)
 	string warriorSkill4Name = "Rest";
 	int warriorSkill4Heal = -50;
@@ -186,7 +231,6 @@ int main() {
 		cout << endl;
 
 		cout << "\n\n";
-		system("PAUSE");
 		system("CLS");
 
 		//player 2 Hero select
@@ -195,195 +239,98 @@ int main() {
 		cout << endl;
 
 		cout << "\n\n";
-		system("PAUSE");
 		system("CLS");
 
 		//Player 1
-		if (player1Hero == 1) {		//Warrior
+
+		//Warrior
+		if (player1Hero == 1) {		
 			player1Health = warriorHealth;
-			//Skill 1
-			player1Skill1Name = warriorSkill1Name;
-			player1Skill1Damage = warriorSkill1Damage;
-			player1Skill1HitChance = warriorSkill1HitChance;
-			player1Skill1DisplayHitChance = warriorSkill1DisplayHitChance;
-			//Skill 2
-			player1Skill2Name = warriorSkill2Name;
-			player1Skill2Damage = warriorSkill2Damage;
-			player1Skill2HitChance = warriorSkill2HitChance;
-			player1Skill2DisplayHitChance = warriorSkill2DisplayHitChance;
-			//Skill 3
-			player1Skill3Name = warriorSkill3Name;
-			player1Skill3Damage = warriorSkill3Damage;
-			player1Skill3HitChance = warriorSkill3HitChance;
-			player1Skill3DisplayHitChance = warriorSkill3DisplayHitChance;
-			//Skill 4
-			player1Skill4Name = warriorSkill4Name;
-			player1Skill4Damage = warriorSkill4Heal;
-			player1Skill4HitChance = warriorSkill4HitChance;
-			player1Skill4DisplayHitChance = warriorSkill4DisplayHitChance;
+			
+			for (int i = 1; i <= 4; i++){
+				player1Skill1Name = getSkillName(1, i);
+				player1Skill1Damage = getSkillDamage(1, i);
+				player1Skill1HitChance = getSkillHitChance(1, i);
+				player1Skill1DisplayHitChance = getSkillDisplayHitChance(1, i);
 		}
-		else if (player1Hero == 2) {		//Mage
+			//Mage
+		if (player1Hero == 2) {		
 			player1Health = mageHealth;
-			//Skill 1
-			player1Skill1Name = mageSkill1Name;
-			player1Skill1Damage = mageSkill1Damage;
-			player1Skill1HitChance = mageSkill1HitChance;
-			player1Skill1DisplayHitChance = mageSkill1DisplayHitChance;
-			//Skill 2
-			player1Skill2Name = mageSkill2Name;
-			player1Skill2Damage = mageSkill2Damage;
-			player1Skill2HitChance = mageSkill2HitChance;
-			player1Skill2DisplayHitChance = mageSkill2DisplayHitChance;
-			//Skill 3
-			player1Skill3Name = mageSkill3Name;
-			player1Skill3Damage = mageSkill3Damage;
-			player1Skill3HitChance = mageSkill3HitChance;
-			player1Skill3DisplayHitChance = mageSkill3DisplayHitChance;
-			//Skill 4
-			player1Skill4Name = mageSkill4Name;
-			player1Skill4Damage = mageSkill4Damage;
-			player1Skill4HitChance = mageSkill4HitChance;
-			player1Skill4DisplayHitChance = mageSkill4DisplayHitChance;
+			
+			for (int i = 1; i <= 4; i++){
+				player1Skill1Name = getSkillName(2, i);
+				player1Skill1Damage = getSkillDamage(2, i);
+				player1Skill1HitChance = getSkillHitChance(2, i);
+				player1Skill1DisplayHitChance = getSkillDisplayHitChance(2, i);
+			}
 		}
-		else if (player1Hero == 3) {		//Archer
+		//Archer
+		else if (player1Hero == 3) {		
 			player1Health = archerHealth;
-			//Skill 1
-			player1Skill1Name = archerSkill1Name;
-			player1Skill1Damage = archerSkill1Damage;
-			player1Skill1HitChance = archerSkill1HitChance;
-			player1Skill1DisplayHitChance = archerSkill1DisplayHitChance;
-			//Skill 2
-			player1Skill2Name = archerSkill2Name;
-			player1Skill2Damage = archerSkill2Damage;
-			player1Skill2HitChance = archerSkill2HitChance;
-			player1Skill2DisplayHitChance = archerSkill2DisplayHitChance;
-			//Skill 3
-			player1Skill3Name = archerSkill3Name;
-			player1Skill3Damage = archerSkill3Damage;
-			player1Skill3HitChance = archerSkill3HitChance;
-			player1Skill3DisplayHitChance = archerSkill3DisplayHitChance;
-			//Skill 4
-			player1Skill4Name = archerSkill4Name;
-			player1Skill4Damage = archerSkill4Damage;
-			player1Skill4HitChance = archerSkill4HitChance;
-			player1Skill4DisplayHitChance = archerSkill4DisplayHitChance;
+			
+			for (int i = 1; i <= 4; i++){
+				player1Skill1Name = getSkillName(3, i);
+				player1Skill1Damage = getSkillDamage(3, i);
+				player1Skill1HitChance = getSkillHitChance(3, i);
+				player1Skill1DisplayHitChance = getSkillDisplayHitChance(3, i);
+			}
 		}
-		else if (player1Hero == 4) {		//Rogue
+		//Rogue
+		else if (player1Hero == 4) {		
 			player1Health = archerHealth;
-			//Skill 1
-			player1Skill1Name = rogueSkill1Name;
-			player1Skill1Damage = rogueSkill1Damage;
-			player1Skill1HitChance = rogueSkill1HitChance;
-			player1Skill1DisplayHitChance = rogueSkill1DisplayHitChance;
-			//Skill 2
-			player1Skill2Name = rogueSkill2Name;
-			player1Skill2Damage = rogueSkill2Damage;
-			player1Skill2HitChance = rogueSkill2HitChance;
-			player1Skill2DisplayHitChance = rogueSkill2DisplayHitChance;
-			//Skill 3
-			player1Skill3Name = rogueSkill3Name;
-			player1Skill3Damage = rogueSkill3Damage;
-			player1Skill3HitChance = rogueSkill3HitChance;
-			player1Skill3DisplayHitChance = rogueSkill3DisplayHitChance;
-			//Skill 4
-			player1Skill4Name = rogueSkill4Name;
-			player1Skill4Damage = rogueSkill4Damage;
-			player1Skill4HitChance = rogueSkill4HitChance;
-			player1Skill4DisplayHitChance = rogueSkill4DisplayHitChance;
+			
+			for (int i = 1; i <= 4; i++){
+				player1Skill1Name = getSkillName(4, i);
+				player1Skill1Damage = getSkillDamage(4, i);
+				player1Skill1HitChance = getSkillHitChance(4, i);
+				player1Skill1DisplayHitChance = getSkillDisplayHitChance(4, i);
+			}
 		}
 
 		//Player 2
-		if (player2Hero == 1) {		//Warrior
+
+		//Warrior
+		if (player2Hero == 1) {		
 			player2Health = warriorHealth;
-			//Skill 1
-			player2Skill1Name = warriorSkill1Name;
-			player2Skill1Damage = warriorSkill1Damage;
-			player2Skill1HitChance = warriorSkill1HitChance;
-			player2Skill1DisplayHitChance = warriorSkill1DisplayHitChance;
-			//Skill 2
-			player2Skill2Name = warriorSkill2Name;
-			player2Skill2Damage = warriorSkill2Damage;
-			player2Skill2HitChance = warriorSkill2HitChance;
-			player2Skill2DisplayHitChance = warriorSkill2DisplayHitChance;
-			//Skill 3
-			player2Skill3Name = warriorSkill3Name;
-			player2Skill3Damage = warriorSkill3Damage;
-			player2Skill3HitChance = warriorSkill3HitChance;
-			player2Skill3DisplayHitChance = warriorSkill3DisplayHitChance;
-			//Skill 4
-			player2Skill4Name = warriorSkill4Name;
-			player2Skill4Damage = warriorSkill4Heal;
-			player2Skill4HitChance = warriorSkill4HitChance;
-			player2Skill4DisplayHitChance = warriorSkill4DisplayHitChance;
+			
+			for (int i = 1; i <= 4; i++){
+				player2Skill1Name = getSkillName(1, i);
+				player2Skill1Damage = getSkillDamage(1, i);
+				player2Skill1HitChance = getSkillHitChance(1, i);
+				player2Skill1DisplayHitChance = getSkillDisplayHitChance(1, i);
+			}
 		}
-		else if (player2Hero == 2) {		//Mage
+		//Mage
+		else if (player2Hero == 2) {		
 			player2Health = mageHealth;
-			//Skill 1
-			player2Skill1Name = mageSkill1Name;
-			player2Skill1Damage = mageSkill1Damage;
-			player2Skill1HitChance = mageSkill1HitChance;
-			player2Skill1DisplayHitChance = mageSkill1DisplayHitChance;
-			//Skill 2
-			player2Skill2Name = mageSkill2Name;
-			player2Skill2Damage = mageSkill2Damage;
-			player2Skill2HitChance = mageSkill2HitChance;
-			player2Skill2DisplayHitChance = mageSkill2DisplayHitChance;
-			//Skill 3
-			player2Skill3Name = mageSkill3Name;
-			player2Skill3Damage = mageSkill3Damage;
-			player2Skill3HitChance = mageSkill3HitChance;
-			player2Skill3DisplayHitChance = mageSkill3DisplayHitChance;
-			//Skill 4
-			player2Skill4Name = mageSkill4Name;
-			player2Skill4Damage = mageSkill4Damage;
-			player2Skill4HitChance = mageSkill4HitChance;
-			player2Skill4DisplayHitChance = mageSkill4DisplayHitChance;
+			
+			for (int i = 1; i <= 4; i++){
+				player2Skill1Name = getSkillName(2, i);
+				player2Skill1Damage = getSkillDamage(2, i);
+				player2Skill1HitChance = getSkillHitChance(2, i);
+				player2Skill1DisplayHitChance = getSkillDisplayHitChance(2, i);
+			}
 		}
-		else if (player2Hero == 3) {		//Archer
+		//Archer
+		else if (player2Hero == 3) {		
 			player2Health = archerHealth;
-			//Skill 1
-			player2Skill1Name = archerSkill1Name;
-			player2Skill1Damage = archerSkill1Damage;
-			player2Skill1HitChance = archerSkill1HitChance;
-			player2Skill1DisplayHitChance = archerSkill1DisplayHitChance;
-			//Skill 2
-			player2Skill2Name = archerSkill2Name;
-			player2Skill2Damage = archerSkill2Damage;
-			player2Skill2HitChance = archerSkill2HitChance;
-			player2Skill2DisplayHitChance = archerSkill2DisplayHitChance;
-			//Skill 3
-			player2Skill3Name = archerSkill3Name;
-			player2Skill3Damage = archerSkill3Damage;
-			player2Skill3HitChance = archerSkill3HitChance;
-			player2Skill3DisplayHitChance = archerSkill3DisplayHitChance;
-			//Skill 4
-			player2Skill4Name = archerSkill4Name;
-			player2Skill4Damage = archerSkill4Damage;
-			player2Skill4HitChance = archerSkill4HitChance;
-			player2Skill4DisplayHitChance = archerSkill4DisplayHitChance;
+			
+			for (int i = 1; i <= 4; i++){
+				player2Skill1Name = getSkillName(3, i);
+				player2Skill1Damage = getSkillDamage(3, i);
+				player2Skill1HitChance = getSkillHitChance(3, i);
+				player2Skill1DisplayHitChance = getSkillDisplayHitChance(3, i);
+			}
 		}
-		else if (player2Hero == 4) {		//Rogue
+		//Rogue
+		else if (player2Hero == 4) {		
 			player2Health = rogueHealth;
-			//Skill 1
-			player2Skill1Name = rogueSkill1Name;
-			player2Skill1Damage = rogueSkill1Damage;
-			player2Skill1HitChance = rogueSkill1HitChance;
-			player2Skill1DisplayHitChance = rogueSkill1DisplayHitChance;
-			//Skill 2
-			player2Skill2Name = rogueSkill2Name;
-			player2Skill2Damage = rogueSkill2Damage;
-			player2Skill2HitChance = rogueSkill2HitChance;
-			player2Skill2DisplayHitChance = rogueSkill2DisplayHitChance;
-			//Skill 3
-			player2Skill3Name = rogueSkill3Name;
-			player2Skill3Damage = rogueSkill3Damage;
-			player2Skill3HitChance = rogueSkill3HitChance;
-			player2Skill3DisplayHitChance = rogueSkill3DisplayHitChance;
-			//Skill 4
-			player2Skill4Name = rogueSkill4Name;
-			player2Skill4Damage = rogueSkill4Damage;
-			player2Skill4HitChance = rogueSkill4HitChance;
-			player2Skill4DisplayHitChance = rogueSkill4DisplayHitChance;
+			
+			for (int i = 1; i <= 4; i++){
+				player2Skill1Name = getSkillName(4, i);
+				player2Skill1Damage = getSkillDamage(4, i);
+				player2Skill1HitChance = getSkillHitChance(4, i);
+				player2Skill1DisplayHitChance = getSkillDisplayHitChance(4, i);
 		}
 
 		while (player1Health > 0 && player2Health > 0) {
